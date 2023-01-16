@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(15, 90, 113);">
+    <ul class="nav justify-content-center" style="background-color: rgb(15, 90, 113);">
+        <li class="nav-item">
+            <a class="nav-link text-white" href="voltajes.html">Voltajes</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="corrientes.html">Corrientes</a>
+        </li>
+        <li class="nav-item  ">
+          <a class="nav-link text-white" href="potencias.html">Potencias</a>
+        </li>
+        <li class="nav-item  ">
+            <a class="nav-link text-white" href="historial.html">Historicos</a>
+          </li>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Cuenta
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html">Cerrar Sesión</a></li>
+          
+            </ul>
+          </div>
+         
+      </ul>
+      <br> 
+ 
+<br>
+<br>
+
+ <!-- Voltaje fase con fase -->
+ <div class="container"> 
+  <div class="row" >
+    <div class="col-sm-2 mb-3 mb-sm-0 ">
+      <div class="card">
+        <div class="card-body text-center text-bg-primary ">
+          <h6 class="card-title text-white">Voltaje  Fase R</h6>
+          <p class="card-text text-white">---</p>
+          <h6 class="card-title text-white">Voltaje  Fase S</h6>
+          <p class="card-text text-white">---</p>
+          <h6 class="card-title text-white">Voltaje Fase T</h6>
+          <p class="card-text text-white">---</p>
+       
+        </div>
+       </div>
+
+       <div class="card">
+        <div class="card-body text-center text-bg-primary ">
+          <h6 class="card-title text-white">Corriente de carga puntual Fase R (A)</h6>
+          <p class="card-text text-white">---</p>
+          <h6 class="card-title text-white">Corriente de carga puntual Fase R (A)</h6>
+          <p class="card-text text-white">---</p>
+          <h6 class="card-title text-white">Corriente de carga puntual Fase R (A)</h6>
+          <p class="card-text text-white">---</p>
+        
+          
+        </div>
+       </div>
+    </div>
+    <div class="col-sm-2 mb-3 mb-sm-0">
+        <div class="card">
+            <div class="card-body text-center text-bg-danger ">
+              <h6 class="card-title">Factor de potencia R</h6>
+              <p class="card-text">---</p>
+              <h6 class="card-title">Factor de potencia S</h6>
+              <p class="card-text">---</p>
+              <h6 class="card-title">Factor de potencia T</h6>
+              <p class="card-text">---</p>
+              
+              
+            </div>
+           </div>
+
+           <div class="card">
+            <div class="card-body text-center text-bg-danger ">
+              <h6 class="card-title">Frecuencia (Hz)</h6>
+              <p class="card-text">---</p>
+            </div>
+           </div>
+    </div>
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Historial de Cargas</h5>
+          <canvas id="grafica"></canvas>
+          <br>
+          <br>
+          <canvas id="grafica1"></canvas>
+          <br>
+          <br>
+          <canvas id="grafica2"></canvas>
+           
+         </div>
+       </div>
+    </div>
+
+    <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card">
+            <div class="card-body text-center text-bg-success ">
+              <h6 class="card-title">Consumo total Kw/h, periodo actual</h6>
+              <p class="card-text">---</p>
+             </div>
+           </div>
+           <br>
+           <br>
+           <div class="card">
+            <div class="card-body text-center text-bg-primary">
+              <h6 class="card-title text-white">Consumo Kw/h ultimos 7 dias</h6>
+              <p class="card-text text-white">---</p>
+            </div>
+           </div>
+           <br>
+<br>
+           <div class="card">
+            <div class="card-body text-center text-bg-primary ">
+              <h6 class="card-title">Gs consumidos en el periodo actual</h6>
+              <p class="card-text">---</p>
+            </div>
+           </div>
+<br>
+<br>
+           <div class="card">
+            <div class="card-body text-center text-bg-success ">
+              <h6 class="card-title">Gs consumidos Periodo anterior</h6>
+              <p class="card-text">---</p>
+            </div>
+           </div>
+    </div>
+  </div>
+  </div>
+<br>
+   
+  
+   
+   
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const labels = ['Enero', 'Febrero', 'Marzo', 'Abril']
+
+const dataset1 = {
+    label: "Corriente Fase R",
+    data: [10, 55, 60, 120],
+    borderColor: 'rgba(248, 37, 37)',
+    fill: false,
+    tension: 0.1
+};
+
+ 
+
+const graph = document.querySelector("#grafica");
+
+const data = {
+    labels: labels,
+    datasets: [dataset1 ]
+};
+
+const config = {
+    type: 'line',
+    data: data,
+};
+
+new Chart(graph, config);
+  </script>
+
+ <!-- Grafica 2-->
+
+  <script>
+    const labels1 = ['Enero', 'Febrero', 'Marzo', 'Abril']
+
+const dataset2 = {
+    label: "Corriente Fase S",
+    data: [10, 55, 100, 120],
+    borderColor: '#1AE817',
+    fill: false,
+    tension: 0.1
+};
+
+ 
+
+const graph1 = document.querySelector("#grafica1");
+
+const data1 = {
+    labels: labels1,
+    datasets: [dataset2 ]
+};
+
+const config1 = {
+    type: 'line',
+    data: data1,
+};
+
+new Chart(graph1, config1);
+  </script>
+
+  <!-- Grafica 3-->
+
+  <script>
+    const labels2 = ['Enero', 'Febrero', 'Marzo', 'Abril']
+
+const dataset3 = {
+    label: "Corriente Fase T",
+    data: [10, 55, 50, 120],
+    borderColor: '#040780',
+    fill: false,
+    tension: 0.1
+};
+
+ 
+
+const graph2 = document.querySelector("#grafica2");
+
+const data2 = {
+    labels: labels2,
+    datasets: [dataset3 ]
+};
+
+const config2 = {
+    type: 'line',
+    data: data2,
+};
+
+new Chart(graph2, config2);
+  </script>
+  
+  
+   
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script> 
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+  <ul class="nav justify-content-center" style="background-color: rgb(15, 90, 113);">
+     
+    <li class="nav-item">
+      <a class="nav-link text-white" href="voltajes.html">Voltajes</a>
+    </li>
+    <li class="nav-item  ">
+      <a class="nav-link text-white" href="corrientes.html">Corrientes</a>
+    </li>
+    <li class="nav-item  ">
+      <a class="nav-link text-white" href="corrientes.html">Historicos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="menu.html">Menu Principal</a>
+    </li>
+  </ul>
+  <br>
+  <h1 class="text-center text-dark"> Potencias</h1>
+
+  <!-- Voltaje fase neutro -->
+  <div class="container"> 
+<div class="row">
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Potencia Activa Fase R(W)</h5>
+        <p class="card-text">---</p>
+        <p>
+           <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Ver más
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body" style="background-color: rgb(15, 90, 113);">
+            <h5 class="card-title text-white">Potencia Reactiva R(VAR)</h5>
+            <p class="card-text text-white">---</p>
+            <h5 class="card-title text-white">Potencia Aparente R(VA)</h5>
+            <p class="card-text text-white">---</p>
+             
+           </div>
+        </div>
+      </div>
+     </div>
+  </div>
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Potencia Activa Fase S(W)</h5>
+        <p class="card-text">---</p>
+        <p>
+           <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+            Ver más
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample1">
+          <div class="card card-body" style="background-color: rgb(15, 90, 113);">
+            <h5 class="card-title text-white">Potencia Reactiva S(VAR)</h5>
+            <p class="card-text text-white">---</p>
+            <h5 class="card-title text-white">Potencia Aparente S(VA)</h5>
+            <p class="card-text text-white">---</p>
+             
+           </div>
+        </div>
+      </div>
+     </div>
+  </div>
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Potencia Activa Fase T(W)</h5>
+        <p class="card-text">---</p>
+        <p>
+           <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+            Ver más
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample2">
+          <div class="card card-body" style="background-color: rgb(15, 90, 113);">
+            <h5 class="card-title text-white">Potencia Reactiva T(VAR)</h5>
+            <p class="card-text text-white">---</p>
+            <h5 class="card-title text-white">Potencia Aparente T(VA)</h5>
+            <p class="card-text text-white">---</p>
+             
+           </div>
+        </div>
+      </div>
+     </div>
+  </div
+</div>
+</div>
+<br>
+<br>
+ 
+<br>
+  <div class="row justify-content-center">
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Potencia Activa RST(W)</h5>
+          <div>
+            <canvas id="myChart1"></canvas>
+          </div>
+         
+          
+        </div>
+       </div>
+       
+    </div>
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Potencia Reactiva RST(VAR)</h5>
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
+         
+          
+        </div>
+       </div>
+       
+    </div>
+     
+    <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Potencia Aparente RST(VA)</h5>
+            <div>
+              <canvas id="myChart2"></canvas>
+            </div>
+           
+            
+          </div>
+         </div>
+         
+      </div>
+  </div>
+
+    <!-- Voltaje fase neutro -->
+    <div class="container"> 
+        <div class="row">
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title ">Potencia Aparente Total ∑S (VA)</h5>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                    Ver más
+                  </button>
+                </p>
+                <div class="collapse" id="collapseExample3">
+                  <div class="card card-body" style="background-color: rgb(245, 245, 253);">
+                     <p class="card-text text-dark">---</p>
+                   
+                   </div>
+                </div>
+              </div>
+             </div>
+          </div>
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title ">Potencia activa total ∑P (W)</h5>
+                 
+                <p>
+                   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample1">
+                    Ver más
+                  </button>
+                </p>
+                <div class="collapse" id="collapseExample4">
+                  <div class="card card-body" style="background-color: rgb(245, 245, 253);">
+                     <p class="card-text text-dark">---</p>
+                     
+                   </div>
+                </div>
+              </div>
+             </div>
+          </div>
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body text-center"  >
+                <h5 class="card-title " >Potencia reactiva total ∑Q (var)</h5>
+               
+                <p>
+                   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample2">
+                    Ver más
+                  </button>
+                </p>
+                <div class="collapse" id="collapseExample5">
+                  <div class="card card-body" style="background-color: rgb(245, 245, 253);">
+                    
+                    <p class="card-text text-dark">---</p>
+                   
+                   </div>
+                </div>
+              </div>
+             </div>
+          </div>
+        </div>
+        </div>
+   
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['R', 'S', 'T', ],
+        datasets: [{
+          label: 'Filtrar',
+          data: [12, 19, 23],
+          borderWidth: 1,
+          backgroundColor:[
+          '#3EE548',
+          '#3EDDE5',
+          '#E5973E'
+          ]
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+  <script>
+    const ctx1 = document.getElementById('myChart1');
+  
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['R', 'S', 'T', ],
+        datasets: [{
+          label: 'Filtrar',
+          data: [12, 19, 23],
+          borderWidth: 1,
+          backgroundColor:[
+          '#0A18F4',
+          '#134431',
+          '#FD9600'
+          ]
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+  <script>
+    const ctx2 = document.getElementById('myChart2');
+  
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['R', 'S', 'T', ],
+        datasets: [{
+          label: 'Filtrar',
+          data: [12, 19, 23],
+          borderWidth: 1,
+          backgroundColor:[
+          '#0A18F4',
+          '#134431',
+          '#FD9600'
+          ]
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script> 
+</body>
+</html>
